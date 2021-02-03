@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMove : MonoBehaviour
+{
+    public float horizontalIn;
+    public float verticalIn;
+    public float speed = 10.0f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        horizontalIn = Input.GetAxis("horizontal");
+        transform.Translate(Vector3.right * horizontalIn * Time.deltaTime * speed);
+        verticalIn = Input.GetAxis("vertical");
+        transform.Translate(Vector3.up * verticalIn * Time.deltaTime * speed);
+    }
+}
